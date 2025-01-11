@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP AMC</title>
+  <link rel="stylesheet" href="general.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+    .section-1 {
+      border: 2px solid rgb(237, 6, 6);
+      height: 700px;
+      margin: 0 4%;
+      width: 92%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(Asset/image_539_2x.webp);
+      background-position:center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      padding-top: 50px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 0px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <span class="ms-2" >AP AMC</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="funds.html">Funds</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+  <section id="contact" class="contact">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" id="uq2">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact
+
+        </li>
+      </ol>
+    </nav>
+    <div class="section-1">
+      <div class="container">
+        <div class="form-container">
+          <h4 class="text-center mb-4">Contact us</h4>
+          <form id="submit-to-google-sheet">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input class="form-control" type="text" name="name" id="name" placeholder="Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input class="form-control" type="email" name="email" id="email" placeholder="Email" required />
+            </div>
+            <div class="input-group">
+              <label for="slip" class="input-group">Contact Number:</label>
+              <div class="input-group-text">+91</div>
+              <input class="form-control" type="text" name="contact_number" id="contact_number"
+                placeholder="Contact Number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="loc" style="display:none;">Service</label>
+              <select class="form-control" name="gender" id="gender" style="display:none;">
+                <option value="" disabled selected hidden>Choose...</option>
+                <option value="Investment">Investment</option>
+                <option value="Financial consultation">Financial consultation</option>
+                <option value="Financial account">Financial account</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="loc">Message:</label>
+              <textarea class="form-control" style="padding: 10px;" name="message" id="message" placeholder="Message"
+                required></textarea>
+              <div class="form-group form-check mt-2">
+                <input class="form-check-input" style="display:none;" type="checkbox" id="age" />
+                <label class="form-check-label" style="display:none;" for="age">error</label>
+              </div>
+              <div class="form-group form-check">
+                <input class="form-check-input" type="checkbox" id="ex" style="display:none;" />
+                <label class="form-check-label" for="ex" style="display:none;">I certify that I am agree with the
+                  <a href="terms.html" target="_blank">terms and policies.</a>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Submit
+              </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-section address">
+        <h3>AP AMC</h3>
+        <p>Namakkal - 637207</p>
+        <a href="#" class="contact-link">Contact Us</a>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@apamc_com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/apamc.in/"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com/in/ap-asset-management-company-58a32b2b0"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="securities.html">Stocks</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="invest.html">Investments</a></li>
+          <li><a href="">Mutual Funds</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>AP AMC</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="user.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="funds.html">AMC Funds</a></li>
+          <li><a href="user.html">Login</a></li>
+          <li><a href="Login-admin.html">Admin</a></li>
+          <li><a href="NAV-admin.html">NAV admin</a></li>
+          <li><a href="signup.html">Create account</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023-2024 AP AMC. All rights reserved, Built with ❤️ in India</p>
+      <div class="footer-legal">
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbxvvSRZXrdVz89EawL_weRm_KNdtEn9-GTbDYsxkNXYJPoCTH75rnAaRavjIP9q42OgRA/exec";
+  const form = document.forms["submit-to-google-sheet"];
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var formData = new FormData(form);
+    var ex = document.getElementById("ex").checked;
+    var age = document.getElementById("age").checked;
+
+    if (age) {
+      formData.append("age", "Yes");
+    } else {
+      formData.append("age", "No");
+    }
+    if (ex) {
+      formData.append("ex", "Yes");
+    } else {
+      formData.append("ex", "No");
+    }
+
+    fetch(scriptURL, { method: "POST", body: formData })
+      .then((response) => {
+        swal("Done", "Submitted Successfully.", "success");
+      })
+      .catch((error) => {
+        swal("Error", "Something went wrong. please try again!", "error");
+      });
+  });
+</script>
+
+</html>

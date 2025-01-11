@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP AMC</title>
+  <link rel="stylesheet" href="general.css">
+  <link rel="icon" type="image/png" href="Asset/1712412180657.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+
+    button {
+      border-radius: 0.8rem;
+      padding: 5px;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .section-1 {
+      width: 100%;
+      display: flex;
+      height: 42rem;
+    }
+
+    .container-2,
+    .container-4 {
+      border: 1px solid black;
+      width: 50%;
+    }
+
+    .container-3 {
+      border: 1px solid black;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-2 {
+      width: 100%;
+      display: flex;
+      height: 50rem;
+
+    }
+
+    .container-5 {
+      border: 1px solid black;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #cookie-message {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 14px;
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+      display: none;
+      /* Initially hidden */
+    }
+
+    #cookie-message button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #cookie-message button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <span class="ms-2" >AP AMC</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="funds.html">Funds</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="home" class="home">
+    <div class="section-1">
+      <div class="container-2">
+        <img style="height: 100%;" src="Asset/11062b_e08c89369c6345c9a7698e7ca1d32ea3~mv2.avif" alt="" />
+      </div>
+      <div class="container-3">
+        <div class="box-1">
+          <h2>Welcome to Our AP AMC</h2>
+          <p>Your trusted partner in financial growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="funds" class="">
+    <div class="section-2">
+      <div class="container-4">
+        <img style="height: 100%;" src="Asset/11062b_2720edea62754dc19e185c4816e93103~mv2.avif" alt="" />
+      </div>
+      <div class="container-5">
+        <p class="">Fill the resgister form to get an account</p>
+        <br />
+        <button type="button"><a href="user.html" style="text-decoration: none;">Sign up</a></button>
+      </div>
+  </section>
+  <section>
+    <div id="cookie-message">
+      Disclaimer:
+      The information provided by AP AMC on this website is for general informational purposes only and should not be
+      construed as financial advice. While we strive to provide accurate and up-to-date information, we make no
+      representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability,
+      suitability, or availability of the information, products, or services contained on this site. Investing in
+      financial markets involves risks, including the loss of principal. Past performance is not indicative of future
+      results. Individuals should consult with a qualified financial advisor before making any investment decisions. The
+      Company is not responsible for any losses or damages arising from reliance on the information provided on this
+      site. By using this website, you acknowledge and agree that you have read and understood this disclaimer.For a
+      comprehensive understanding of our services and any associated risks, please review our Terms and Conditions and
+      Privacy Policy.
+      <button onclick="acceptCookies()">Got it!</button>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-section address">
+        <h3>AP AMC</h3>
+        <p>Namakkal - 637207</p>
+        <a href="#" class="contact-link">Contact Us</a>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@apamc_com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/apamc.in/"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com/in/ap-asset-management-company-58a32b2b0"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="securities.html">Stocks</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="invest.html">Investments</a></li>
+          <li><a href="">Mutual Funds</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>AP AMC</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="user.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="funds.html">AMC Funds</a></li>
+          <li><a href="user.html">Login</a></li>
+          <li><a href="Login-admin.html">Admin</a></li>
+          <li><a href="NAV-admin.html">NAV admin</a></li>
+          <li><a href="signup.html">Create account</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023-2024 AP AMC. All rights reserved, Built with ❤️ in India</p>
+      <div class="footer-legal">
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Function to show the cookie message
+    function showCookieMessage() {
+      document.getElementById('cookie-message').style.display = 'block';
+    }
+
+    // Function to handle cookie acceptance
+    function acceptCookies() {
+      document.getElementById('cookie-message').style.display = 'none';
+      // Optionally save the consent to localStorage or cookies for persistence
+      // localStorage.setItem('cookieConsent', 'true');
+    }
+
+    // Display the cookie message every time (or check consent persistence)
+    // if (!localStorage.getItem('cookieConsent')) {
+    showCookieMessage();
+    // }
+  </script>
+
+</body>
+
+</html>

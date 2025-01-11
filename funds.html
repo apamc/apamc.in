@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP AMC</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="general.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+
+    .section-1 {
+      width: 100%;
+      height: 900px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .conatainer-2,
+    .conatainer-1-5 {
+      border: 2px solid rgb(0, 0, 0);
+      width: 92%;
+      margin: 0 4%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .fundimg {
+      margin-left: 10px;
+    }
+
+    .fundtitle {
+      margin-left: 25px;
+      word-spacing: 3px;
+    }
+
+    .conatainer-3 {
+      border: 2px solid rgb(0, 0, 0);
+      height: 700px;
+      width: 92%;
+      margin: 0 4%;
+    }
+
+    .section-2 {
+      border: 2px solid rgb(0, 0, 0);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-color: rgb(255, 255, 255);
+      flex-direction: column;
+    }
+
+    .container-4,
+    .container-5 {
+      width: 92%;
+      margin: 0 4%;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdownhold {
+      padding: 10px;
+    }
+
+    .dropdownhold-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .dropdownhold-header h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    #arrow {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdownhold-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-top: 1px solid #ccc;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .dropdownhold-content ul {
+      margin: 10px 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .dropdownhold-content li {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+
+    .container-holdings {
+      width: 90%;
+      margin: 5% 5%;
+      padding: 10px;
+      background-color: #f9f9f9;
+      /* Light gray container */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #000;
+      margin: 5px;
+      /* Black header */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      background-color: #fff;
+      /* White table background */
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+      /* Light gray borders */
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      color: #000;
+      /* Black text */
+    }
+
+    th {
+      background-color: #f2f2f2;
+      /* Light gray header background */
+      color: #000;
+      /* Black header text */
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+      /* Light gray for even rows */
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+      /* Slight hover effect */
+    }
+
+    .chart-container {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .funddetails {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-3 {
+      border: 2px solid rgb(0, 0, 0);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-color: rgb(255, 255, 255);
+      flex-direction: column;
+    }
+
+    .container-6 {
+      width: 92%;
+      margin: 0 4%;
+      border: 1px solid #5900ff;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      line-height: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="ms-2" >AP AMC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="funds.html">Funds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user.html">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="securities" class="securities">
+    <div class="section-1">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" id="uq2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Funds
+
+          </li>
+        </ol>
+      </nav>
+      <div class="conatainer-2">
+        <div class="fundimg">
+          <img src="Asset/1712412180657.jpg" alt="" style="width: 50px;">
+        </div>
+        <div class="fundtitle">
+          <H2>AP AMC Fund Direct Growth</H2>
+        </div>
+      </div>
+      <div class="conatainer-3">
+        <iframe title="NAV BI" width="100%" height="100%"
+          src="https://app.powerbi.com/reportEmbed?reportId=74186a41-eab0-4a61-948e-a3f46c7f425f&autoAuth=true&ctid=9fc2f44c-77d7-4911-8267-8da441f7de31"
+          frameborder="0" allowFullScreen="true">
+        </iframe>
+      </div>
+      <div class="conatainer-1-5">
+        <table>
+          <tbody class="funddetails">
+            <tr>
+              <td>NAV</td>
+              <td>₹11.09</td>
+            </tr>
+            <tr>
+              <td>Min amount</td>
+              <td>₹100</td>
+            </tr>
+            <tr>
+              <td>Fund size</td>
+              <td>₹50,200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section-2">
+      <div class="container-4">
+        <div class="dropdownhold">
+          <div class="dropdownhold-header" onclick="toggleDetails()">
+            <h3>Holdings</h3>
+            <span id="arrow">▼</span>
+          </div>
+          <div class="dropdownhold-content" id="details">
+            <!-- Filter Options -->
+            <div class="container-holdings">
+              <h2>Holdings (15)</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sector</th>
+                    <th>Market Cap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MANAPPURAM FINANCE LTD</td>
+                    <td>Financial</td>
+                    <td>7,200.00</td>
+                  </tr>
+                  <tr>
+                    <td>TATA MOTORS LIMITED</td>
+                    <td>Automobile</td>
+                    <td>6,895.00</td>
+                  </tr>
+                  <tr>
+                    <td>DRREDDY</td>
+                    <td>Healthcare</td>
+                    <td>6,662.00</td>
+                  </tr>
+                  <tr>
+                    <td>IDFC FIRST BANK LIMITED</td>
+                    <td>Financial</td>
+                    <td>1,845.00</td>
+                  </tr>
+                  <tr>
+                    <td>NIP IND ETF GOLD BEES</td>
+                    <td>Commodities</td>
+                    <td>1,850.00</td>
+                  </tr>
+                  <tr>
+                    <td>KARNATAKA BANK LIMITED</td>
+                    <td>Financial</td>
+                    <td>5,170.00</td>
+                  </tr>
+                  <tr>
+                    <td>IDFC</td>
+                    <td>Financial</td>
+                    <td>2,235.00</td>
+                  </tr>
+                  <tr>
+                    <td>ITC LTD</td>
+                    <td>Consumer staples</td>
+                    <td>3,180.00</td>
+                  </tr>
+                  <tr>
+                    <td>THE SOUTH INDIAN BANK LTD</td>
+                    <td>Financial</td>
+                    <td>25.00</td>
+                  </tr>
+                  <tr>
+                    <td>EASY TRIP PLANNERS LTD</td>
+                    <td>Services</td>
+                    <td>177.88</td>
+                  </tr>
+                  <tr>
+                    <td>NMDC STEEL LTD</td>
+                    <td>Metals & Mining</td>
+                    <td>121.00</td>
+                  </tr>
+                  <tr>
+                    <td>RATTANINDIA POWER</td>
+                    <td>Power</td>
+                    <td>428.00</td>
+                  </tr>
+                  <tr>
+                    <td>BAJAJ HOUSING FINANCE</td>
+                    <td>Financial</td>
+                    <td>23,000.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-5">
+        <div class="chart-container">
+          <canvas id="equityChart"></canvas>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-3">
+      <div class="container-6">
+        <h2 style="margin: 10px;">Fees</h2>
+        <P>as of current prospectus <br>
+          Management Fees 0.65% <br>
+          +Acquired Fund Fees and Expenses 0.03% <br>
+          +Other Expenses 0.01% <br>
+          ------------------------------------------------------------------- <br>
+          =Expense Ratio 0.69% <br>
+          Exit load of 1% if redeemed within 3 months</p>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-section address">
+        <h3>AP AMC</h3>
+        <p>Namakkal - 637207</p>
+        <a href="#" class="contact-link">Contact Us</a>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@apamc_com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/apamc.in/"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com/in/ap-asset-management-company-58a32b2b0"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="securities.html">Stocks</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="invest.html">Investments</a></li>
+          <li><a href="">Mutual Funds</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>AP AMC</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="user.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="funds.html">AMC Funds</a></li>
+          <li><a href="user.html">Login</a></li>
+          <li><a href="Login-admin.html">Admin</a></li>
+          <li><a href="NAV-admin.html">NAV admin</a></li>
+          <li><a href="signup.html">Create account</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023-2024 AP AMC. All rights reserved, Built with ❤️ in India</p>
+      <div class="footer-legal">
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  </footer>
+
+</body>
+<script>
+  function toggleDetails() {
+    const details = document.getElementById('details');
+    const arrow = document.getElementById('arrow');
+
+    if (details.style.maxHeight) {
+      details.style.maxHeight = null;
+      arrow.style.transform = 'rotate(0deg)';
+    } else {
+      details.style.maxHeight = details.scrollHeight + 'px';
+      arrow.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  // Load saved data from localStorage
+  const savedData = JSON.parse(localStorage.getItem('equityData')) || {
+    services: 18.6,
+    healthcare: 18.3,
+    others: 18.0,
+    financial: 17.1,
+    energy: 14.3,
+    consumer: 7.8,
+    chemicals: 6.0
+  };
+
+  const ctx = document.getElementById('equityChart').getContext('2d');
+  const equityChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Services", "Healthcare", "Others", "Financial", "Energy", "Consumer Staples", "Chemicals"],
+      datasets: [{
+        data: [
+          savedData.services,
+          savedData.healthcare,
+          savedData.others,
+          savedData.financial,
+          savedData.energy,
+          savedData.consumer,
+          savedData.chemicals
+        ],
+        backgroundColor: [
+          '#a3e635', // Light Green
+          '#14b8a6', // Teal
+          '#6366f1', // Indigo
+          '#fbbf24', // Yellow
+          '#9333ea', // Purple
+          '#f43f5e', // Red
+          '#818cf8'  // Light Blue
+        ],
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { color: 'white' }
+        }
+      }
+    }
+  });
+</script>
+
+</html>

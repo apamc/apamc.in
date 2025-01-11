@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP AMC</title>
+  <link rel="stylesheet" href="general.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+
+    .section- {
+      border: 2px solid rgb(237, 6, 6);
+      height: 1500px;
+      margin: 0 4%;
+      width: 92%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @media (max-width: 500px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 501px) and (max-width: 750px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 751px) and (max-width: 999px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="ms-2" >AP AMC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="funds.html">Funds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user.html">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="contact" class="contact">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" id="uq2">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Services
+        </li>
+      </ol>
+    </nav>
+    <div class="grid-container">
+      <div class="card" style="width: 18rem;">
+        <img src="Asset/Screenshot 2024-01-09 222447.avif" class="card-img-top" alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Investments</h5>
+          <p class="card-text">We where invest your money in share of the company in a stock market.
+            The dividend and returns were your returns. Build your savings, protect your money from inflation and taxes,
+            and maximize income from your investments.</p>
+          <a href="invest.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="Asset/difference-between-financial-consultant-and-financial-advisor.avif" class="card-img-top"
+          alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Financial advisory</h5>
+          <p class="card-text">We where also invest in mutual funds with moderate returns with low risk. We also provide
+            sip option as monthly investment plan compounded. Power of compounding enables your earnings to grow as your
+            investments grow.</p>
+          <a href="contact.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="Asset/isometric-money-background_52683-7989.avif" class="card-img-top" alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Portfolio management</h5>
+          <p class="card-text">The gold ETFs are best investment in the gold as in small quantities.
+            It is possibly the only investment that has held its value over time and never lost its sheen. Inflation
+            protection and portfolio diversification are the two main benefits of investing in gold.</p>
+          <a href="signup.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-section address">
+        <h3>AP AMC</h3>
+        <p>Namakkal - 637207</p>
+        <a href="#" class="contact-link">Contact Us</a>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@apamc_com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/apamc.in/"><i class="fab fa-instagram"></i></a>
+          <a href="linkedin.com/in/ap-asset-management-company-58a32b2b0"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="securities.html">Stocks</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="invest.html">Investments</a></li>
+          <li><a href="">Mutual Funds</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>AP AMC</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="funds.html">Funds</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="user.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="funds.html">AMC Funds</a></li>
+          <li><a href="user.html">Login</a></li>
+          <li><a href="Login-admin.html">Admin</a></li>
+          <li><a href="NAV-admin.html">NAV admin</a></li>
+          <li><a href="signup.html">Create account</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023-2024 AP AMC. All rights reserved, Built with ❤️ in India</p>
+      <div class="footer-legal">
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

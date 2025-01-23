@@ -24,70 +24,14 @@
             </div>
         </div>
 
-        <!-- Portfolio Summary -->
-        <div class="portfolio-summary">
-            <h3>Portfolio Summary</h3>
-            <p>Total Investment: <strong>₹2,000.00</strong></p>
-            <p>Current Value: <strong>₹2,005.65</strong></p>
-            <p>Overall Gain/Loss: <strong style="color: green;">0.28%</strong></p>
-        </div>
-
         <!-- Mutual Funds Table -->
+        <header>Client Mutual Fund Portfolio</header>
         <div class="container">
-            <h3>Nippon India ETF Gold BeEs</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invested Amount</th>
-                        <th>Units</th>
-                        <th>Current NAV</th>
-                        <th>Current Value</th>
-                        <th>Returns</th>
-                        <th>Returns (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="">₹960.60</td>
-                        <td id="">15</td>
-                        <td id="">₹64.35</td>
-                        <td id="">₹965.25</td>
-                        <td id="" style="color: green;">+₹4.65 </td>
-                        <td id="" style="color: green;">0.48%</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>HDFC short term debt fund direct growth</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invested Amount</th>
-                        <th>Units</th>
-                        <th>Current NAV</th>
-                        <th>Current Value</th>
-                        <th>Returns</th>
-                        <th>Returns (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="">₹1,040</td>
-                        <td id="">33.004</td>
-                        <td id="">₹31.5471</td>
-                        <td id="">₹1,041</td>
-                        <td id="" style="color: green;">+₹1</td>
-                        <td id="" style="color: green;">0.10%</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!--
-            <label for="navInput">Enter Today's NAV:</label>
-            <input type="number" id="navInput" placeholder="Enter NAV" step="0.01">
-            <button id="updateNav">Update NAV</button>
-            <p id="status" style="margin-top: 15px; color: #1e88e5;"></p>
-        </div>
-            -->
+            <h3>Fund Performance</h3>
+            <div class="data-container">
+                <iframe scrolling="no"
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyH_mOe7z3p7QUAOHBi7LR_zo5CftQS0RO7WuwOuIS2pA5QeIVBFeKxLwCMtrn38wA_nVeuRzFEVjP/pubhtml?gid=212215950&single=true"></iframe>
+            </div>
 
             <!-- Performance Analysis -->
             <div class="performance-analysis">
@@ -97,8 +41,8 @@
                         <p>(Redirect to Home)</p>
                     </a>
                 </div>
-
             </div>
+
 
             <!-- Action Buttons -->
             <div>
@@ -107,55 +51,5 @@
             </div>
         </div>
 </body>
-<script>
-    // Store NAV in localStorage
-
-    document.getElementById('updateNav').addEventListener('click', () => {
-        const nav = document.getElementById('navInput').value;
-
-        if (!nav) {
-            document.getElementById('status').textContent = "Please enter a valid NAV.";
-            return;
-        }
-
-        // Store NAV in localStorage
-        localStorage.setItem('fundNAV', nav);
-        document.getElementById('status').textContent = "NAV updated successfully!";
-    });
-
-    // Part 2
-    const investedAmount = 2600; // Default invested amount
-    const units = 243.427;   // Default units
-
-    function updatePortfolio() {
-        const nav = localStorage.getItem('fundNAV'); // Get updated NAV from localStorage
-
-        if (nav) {
-            const currentValue = (nav * units).toFixed(2);
-            const returns = (currentValue - investedAmount).toFixed(2);
-            const returnsPercentage = ((returns / investedAmount) * 100).toFixed(2);
-
-            // Update the table
-            document.getElementById('currentNAV').textContent = `₹${nav}`;
-            document.getElementById('currentValue').textContent = `₹${currentValue}`;
-            document.getElementById('returns').textContent = returns > 0 ? `+₹${returns}` : `-₹${Math.abs(returns)}`;
-            document.getElementById('returns').style.color = returns > 0 ? 'green' : 'red';
-            document.getElementById('returnsPercentage').textContent = `${returnsPercentage}%`;
-            document.getElementById('returnsPercentage').style.color = returns > 0 ? 'green' : 'red';
-
-            // Highlight updates
-            document.querySelectorAll('td').forEach(td => {
-                td.classList.add('highlight');
-                setTimeout(() => td.classList.remove('highlight'), 500);
-            });
-        }
-    }
-
-    // Call updatePortfolio when the page loads
-    updatePortfolio();
-
-    // Update portfolio every 2 seconds to reflect NAV updates
-    setInterval(updatePortfolio, 1000);
-</script>
 
 </html>

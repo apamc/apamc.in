@@ -8,40 +8,36 @@
   <link rel="stylesheet" href="general.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
   <style>
     body {
       font-family: Arial;
       margin: 0;
       padding: 0;
       line-height: 1.4;
-    }
+      }
 
-
-    .grid-container {
+    .container-2 {
+      line-height: 2;
+      width: 92%;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+    h2{
+      min-width: 200px;
+      margin: 30px;
     }
 
-    @media (max-width: 500px) {
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
+    .section-1 {
+      border: 2px solid white;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       }
-    }
-
-    @media (min-width: 501px) and (max-width: 750px) {
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (min-width: 751px) and (max-width: 999px) {
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
   </style>
 </head>
 
@@ -49,10 +45,9 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <span class="ms-2">AP AMC</span>
+        <span class="ms-2" >AP AMC</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -64,10 +59,10 @@
             <a class="nav-link" href="funds.html">Funds</a>
           </li>
           <li class="nav-item" style="margin-right:10px;">
-            <a class="nav-link active" href="services.html">Services</a>
+            <a class="nav-link " href="services.html">Services</a>
           </li>
           <li class="nav-item" style="margin-right:10px;">
-            <a class="nav-link" href="aboutus.html">About</a>
+            <a class="nav-link active" href="aboutus.html">About</a>
           </li>
           <li class="nav-item" style="margin-right:10px;">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -79,51 +74,56 @@
       </div>
     </div>
   </nav>
-
-  <section id="contact" class="contact">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" id="uq2">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Services
+        <li class="breadcrumb-item active" aria-current="page">About
+          
         </li>
       </ol>
     </nav>
-    <div class="grid-container">
-      <div class="card" style="width: 22rem;">
-        <img src="Asset/Screenshot 2024-01-09 222447.avif" class="card-img-top" alt="img">
-        <div class="card-body">
-          <h5 class="card-title">Investments</h5>
-          <p class="card-text">we provide investment solutions to help you achieve financial growth and
-            security. From portfolio management to wealth creation, our expert advisors ensure your goals are met with
-            strategies designed just for you. Experience transparency, personalized guidance, and a proven track record.
-            Start building your financial future today reach out for a consultation.</p>
-          <a href="invest.html" class="btn btn-primary">See more</a>
-        </div>
-      </div>
-      <div class="card" style="width: 22rem;">
-        <img src="Asset/difference-between-financial-consultant-and-financial-advisor.avif" class="card-img-top"
-          alt="img">
-        <div class="card-body">
-          <h5 class="card-title">Financial advisory</h5>
-          <p class="card-text">Our financial advisory service helps you make strategic investment decisions for optimal
-            growth. We focus on maximizing returns while managing risks effectively. Our expert advisors ensure
-            transparency and alignment with your financial goals. Expand your portfolio with confidence and informed
-            guidance. Secure your financial future with our trusted expertise.</p>
-          <a href="contact.html" class="btn btn-primary">See more</a>
-        </div>
-      </div>
-      <div class="card" style="width: 22rem;">
-        <img src="Asset/isometric-money-background_52683-7989.avif" class="card-img-top" alt="img">
-        <div class="card-body">
-          <h5 class="card-title">Portfolio management</h5>
-          <p class="card-text">Our portfolio management service focuses on optimizing your investments for maximum
-            growth and minimal risk. We provide expert guidance to build and maintain a diversified portfolio aligned
-            with your financial goals. With a data-driven approach, we monitor market trends to adapt strategies
-            effectively. Transparency and professionalism are at the core of our service. Trust us to manage your
-            investments with precision and care.</p>
-          <a href="signup.html" class="btn btn-primary">See more</a>
-        </div>
-      </div>
+  <section class="section-1">
+    <div class="container-2">
+      <h2>About AP AMC</h2>
+      <p>
+        Ap amc providers of investment, advisory and risk management
+        solutions. We are a fiduciary to our clients. We’re investing for the
+        future on behalf of our clients, inspiring our employees, and
+        supporting our local communities.<br />
+        <br />Welcome to our asset management company! We are dedicated to
+        helping our clients grow and protect their wealth through prudent
+        investment strategies and personalized financial advice. With years of
+        experience in the industry, our team of experts is committed to
+        providing top-notch service and delivering results that exceed our
+        clients' expectations.<br />
+        <br />
+        At our firm, we understand that every client has unique financial
+        goals and circumstances. That's why we take the time to listen and
+        tailor our services to meet their specific needs. Whether you're
+        planning for retirement, saving for a major purchase, or building a
+        legacy for future generations, we're here to help you navigate the
+        complex world of investing and achieve your objectives.<br />
+        <br />Our approach to asset management is rooted in rigorous research,
+        disciplined risk management, and a long-term perspective. We believe
+        in investing in high-quality assets that have the potential to
+        generate attractive returns over time, while also minimizing downside
+        risk. By focusing on fundamentals and avoiding short-term market
+        noise, we aim to deliver consistent performance and preserve capital
+        in all market environments.<br /><br />
+        Transparency and integrity are core values that guide everything we
+        do. We believe in open and honest communication with our clients, and
+        we strive to build long-lasting relationships based on trust and
+        mutual respect. Our fee structure is simple and transparent, with no
+        hidden costs or conflicts of interest. We are committed to acting in
+        our clients' best interests at all times and putting their needs
+        first.<br />
+        <br />
+        Whether you're a seasoned investor or just starting out, we invite you
+        to learn more about our services and how we can help you achieve your
+        financial goals. Contact us today to schedule a consultation with one
+        of our experienced advisors. We look forward to serving you and
+        helping you build a brighter financial future.
+      </p>
     </div>
   </section>
   <footer class="site-footer">
@@ -176,7 +176,6 @@
       </div>
     </div>
   </footer>
-
 
 </body>
 

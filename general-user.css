@@ -13,12 +13,18 @@ header {
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     margin: 20px auto;
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-section {
@@ -32,6 +38,7 @@ header {
     height: 80px;
     border-radius: 50%;
     margin-right: 20px;
+    border: 1px solid black;
 }
 
 .portfolio-summary,
@@ -87,61 +94,12 @@ h3 {
     color: #333;
 }
 
-table {
+iframe {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th,
-table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #4caf50;
-    color: white;
-}
-
-.highlight {
-    animation: grow 0.5s ease-in-out;
-}
-
-@keyframes grow {
-    from {
-        background-color: rgb(255, 255, 255);
-    }
-
-    to {
-        background-color: white;
-    }
-}
-
-input {
-    width: 150px;
-    padding: 8px;
-    margin: 15px 0;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #1e88e5;
-    color: white;
-    border: none;
-    padding: 12px 10px;
-    margin: 15px 0;
-    font-size: 0.7rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #1565c0;
+    height: 1000px;
+    overflow: hidden;
+    border: 1.2px solid black;
+    border-radius: px;
 }
 
 

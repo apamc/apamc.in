@@ -25,106 +25,13 @@
                 <p>Email: gokulravii1620@gmail.com</p>
             </div>
         </div>
-
-        <!-- Portfolio Summary -->
-        <div class="portfolio-summary">
-            <h3>Portfolio Summary</h3>
-            <p>Total Investment: <strong>₹1,000.00</strong></p>
-            <p>Current Value: <strong>₹1,061.02</strong></p>
-            <p>Overall Gain/Loss: <strong style="color: green;">+6%</strong></p>
-        </div>
-
         <!-- Mutual Funds Table -->
         <header>Client Mutual Fund Portfolio</header>
         <div class="container">
             <h3>Fund Performance</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invested Amount</th>
-                        <th>Units</th>
-                        <th>Current NAV</th>
-                        <th>Current Value</th>
-                        <th>Returns</th>
-                        <th>Returns (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="investedAmount">1000</td>
-                        <td id="units">90.318</td>
-                        <td id="currentNAV">-</td>
-                        <td id="currentValue">-</td>
-                        <td id="returns">-</td>
-                        <td id="returnsPercentage">-</td>
-                    </tr>
-                </tbody>
-            </table>
-            <label for="navInput">Enter Today's NAV:</label>
-            <input type="number" id="navInput" placeholder="Enter NAV" step="0.01">
-            <button id="updateNav">Update NAV</button>
-            <p id="status" style="margin-top: 15px; color: #1e88e5;"></p>
-        </div>
-
-        <!-- Transaction  -->
-        <div class="container-transaction">
-            <h1 class="h1t">Transaction History</h1>
-
-            <div class="transaction">
-                <div class="details">
-                    <span class="action">Invested</span>
-                    <span class="date">14 Mar 2024</span>
-                </div>
-                <div class="info">
-                    <span>Units: <strong>37.146</strong></span>
-                    <span>NAV: <strong>10.23</strong></span>
-                </div>
-                <div class="amount">
-                    <span>₹380</span>
-                    <span class="status completed">COMPLETED</span>
-                </div>
-            </div>
-            <div class="transaction">
-                <div class="details">
-                    <span class="action">Invested</span>
-                    <span class="date">06 Mar 2024</span>
-                </div>
-                <div class="info">
-                    <span>Units: <strong>9.141</strong></span>
-                    <span>NAV: <strong>10.94</strong></span>
-                </div>
-                <div class="amount">
-                    <span>₹100</span>
-                    <span class="status completed">COMPLETED</span>
-                </div>
-            </div>
-            <div class="transaction">
-                <div class="details">
-                    <span class="action">Invested</span>
-                    <span class="date">29 Feb 2024</span>
-                </div>
-                <div class="info">
-                    <span>Units: <strong>19.324</strong></span>
-                    <span>NAV: <strong>10.35</strong></span>
-                </div>
-                <div class="amount">
-                    <span>₹200</span>
-                    <span class="status completed">COMPLETED</span>
-                </div>
-            </div>
-            <div class="transaction">
-                <div class="details">
-                    <span class="action">Invested</span>
-                    <span class="date">01 Jan 2024</span>
-                </div>
-                <div class="info">
-                    <span>Units: <strong>115.00</strong></span>
-                    <span>NAV: <strong>10.00</strong></span>
-                </div>
-                <div class="amount">
-                    <span>₹1,150</span>
-                    <span class="status completed">COMPLETED</span>
-                </div>
+            <div class="data-container">
+                <iframe scrolling="no"
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyH_mOe7z3p7QUAOHBi7LR_zo5CftQS0RO7WuwOuIS2pA5QeIVBFeKxLwCMtrn38wA_nVeuRzFEVjP/pubhtml?gid=212215950&single=true"></iframe>
             </div>
 
             <!-- Performance Analysis -->
@@ -144,54 +51,5 @@
             </div>
         </div>
 </body>
-<script>
-    // Store NAV in localStorage
-
-    document.getElementById('updateNav').addEventListener('click', () => {
-        const nav = document.getElementById('navInput').value;
-
-        if (!nav) {
-            document.getElementById('status').textContent = "Please enter a valid NAV.";
-            return;
-        }
-
-        // Store NAV in localStorage
-        localStorage.setItem('fundNAV', nav);
-        document.getElementById('status').textContent = "NAV updated successfully!";
-    });
-
-    // Part 2
-    const investedAmount = 1000; // Default invested amount
-    const units = 90.318;   // Default units
-
-    function updatePortfolio() {
-        const nav = localStorage.getItem('fundNAV'); // Get updated NAV from localStorage
-
-        if (nav) {
-            const currentValue = (nav * units).toFixed(2);
-            const returns = (currentValue - investedAmount).toFixed(2);
-            const returnsPercentage = ((returns / investedAmount) * 100).toFixed(2);
-
-            // Update the table
-            document.getElementById('currentNAV').textContent = `₹${nav}`;
-            document.getElementById('currentValue').textContent = `₹${currentValue}`;
-            document.getElementById('returns').textContent = returns > 0 ? `+₹${returns}` : `-₹${Math.abs(returns)}`;
-            document.getElementById('returns').style.color = returns > 0 ? 'green' : 'red';
-            document.getElementById('returnsPercentage').textContent = `${returnsPercentage}%`;
-            document.getElementById('returnsPercentage').style.color = returns > 0 ? 'green' : 'red';
-
-            // Highlight updates
-            document.querySelectorAll('td').forEach(td => {
-                td.classList.add('highlight');
-                setTimeout(() => td.classList.remove('highlight'), 500);
-            });
-        }
-    }
-
-    // Call updatePortfolio when the page loads
-    updatePortfolio();
-    // Update portfolio every 2 seconds to reflect NAV updates
-    setInterval(updatePortfolio, 1000);
-</script>
 
 </html>

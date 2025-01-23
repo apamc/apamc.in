@@ -60,7 +60,7 @@
             <label for="email">Email:</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="Email" required />
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" id="refreshButton" class="btn btn-primary btn-block">
             Order
           </button>
       </form>
@@ -96,6 +96,12 @@
           swal("Error", "Something went wrong. please try again!", "error");
         });
     });
+
+    document.getElementById("refreshButton").addEventListener("click", function() {
+            setTimeout(function() {
+                location.reload();
+            }, 10000); // 15000 milliseconds = 15 seconds
+        });
   </script>
 </body>
 

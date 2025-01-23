@@ -78,6 +78,22 @@
       /* Initially hidden */
     }
 
+    @media (max-width: 500px) {
+      #cookie-message {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 10px;
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        z-index: 1000;
+        display: none;
+      }
+    }
+
     #cookie-message button {
       margin-left: 10px;
       padding: 5px 10px;
@@ -90,43 +106,87 @@
     #cookie-message button:hover {
       background-color: #0056b3;
     }
+
+    .box-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .grid-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @media (max-width: 500px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 501px) and (max-width: 750px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 751px) and (max-width: 999px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    .section-2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      height: 50rem;
+
+    }
+
   </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <span class="ms-2" >AP AMC</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="funds.html">Funds</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>  
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="user.html">Profile</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="ms-2">AP AMC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link" href="funds.html">Funds</a>
+          </li>
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link" href="aboutus.html">About</a>
+          </li>
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item" style="margin-right:10px;">
+            <a class="nav-link" href="user.html">Profile</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <section id="home" class="home">
+    </div>
+  </nav>
+  <section id="home" class="home">
     <div class="section-1">
       <div class="container-2">
         <img style="height: 100%;" src="Asset/11062b_e08c89369c6345c9a7698e7ca1d32ea3~mv2.avif" alt="" />
@@ -149,6 +209,44 @@
         <br />
         <button type="button"><a href="user.html" style="text-decoration: none;">Sign up</a></button>
       </div>
+    </div>
+  </section>
+  <section class="section-3">
+    <div class="grid-container">
+      <div class="card" style="width: 100%;">
+        <img src="Asset/Screenshot 2024-01-09 222447.avif" class="card-img-top" alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Stocks</h5>
+          <p class="card-text">We where invest your money in share of the company in a stock market.
+            The dividend and returns were your returns. Build your savings, protect your money from inflation and
+            taxes,
+            and maximize income from your investments.</p>
+          <a href="invest.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 100%;">
+        <img src="Asset/difference-between-financial-consultant-and-financial-advisor.avif" class="card-img-top"
+          alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Mutual funds</h5>
+          <p class="card-text">We where also invest in mutual funds with moderate returns with low risk. We also
+            provide
+            sip option as monthly investment plan compounded. Power of compounding enables your earnings to grow as
+            your
+            investments grow.</p>
+          <a href="contact.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 100%;">
+        <img src="Asset/isometric-money-background_52683-7989.avif" class="card-img-top" alt="img">
+        <div class="card-body">
+          <h5 class="card-title">Gold</h5>
+          <p class="card-text">The gold ETFs are best investment in the gold as in small quantities.
+            It is possibly the only investment that has held its value over time and never lost its sheen. Inflation
+            protection and portfolio diversification are the two main benefits of investing in gold.</p>
+          <a href="signup.html" class="btn btn-primary">See more</a>
+        </div>
+      </div>
   </section>
   <section>
     <div id="cookie-message">
@@ -160,9 +258,9 @@
       financial markets involves risks, including the loss of principal. Past performance is not indicative of future
       results. Individuals should consult with a qualified financial advisor before making any investment decisions. The
       Company is not responsible for any losses or damages arising from reliance on the information provided on this
-      site. By using this website, you acknowledge and agree that you have read and understood this disclaimer.For a
+      site.By using this website, you acknowledge and agree that you have read and understood this disclaimer.For a
       comprehensive understanding of our services and any associated risks, please review our Terms and Conditions and
-      Privacy Policy.
+      Privacy Policy. <br>
       <button onclick="acceptCookies()">Got it!</button>
     </div>
   </section>

@@ -1,146 +1,236 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AP AMC</title>
-    <link rel="stylesheet" href="general.css">
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            padding: 0;
-        }
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<style>
+		* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	font-size: 17px;
+}
 
-        input {
-            padding: 10px;
-            margin-bottom: 10px;
-        }
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 40vh;
+	flex-direction: column;
+	background: #23242a;
+}
 
-        #uq2 {
-            margin-top: 62px;
-        }
+.box {
+	position: relative;
+	width: 380px;
+	height: 420px;
+	background: #1c1c1c;
+	border-radius: 8px;
+	overflow: hidden;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            line-height: 1.4;
-            height: 100vh;
-            margin-top: 70px;
-            background-color: #f4f4f4;
-        }
+.box::before {
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 380px;
+	height: 420px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+	animation: animate 6s linear infinite;
+}
 
-        .login-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+.box::after {
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 380px;
+	height: 420px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
 
-        .login-container input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
-        .login-container button {
-            width: 100%;
-            margin-left: 1.8%;
-            padding: 10px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.form {
 
-        .login-container button:hover {
-            background: #0056b3;
-        }
+	position: absolute;
+	inset: 2px;
+	background: #28292d;
+	padding: 50px 40px;
+	border-radius: 8px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+}
 
-        .signup-button {
-            background-color: rgb(46, 164, 79);
-            color: white;
-            height: 30px;
-            width: 100px;
-            margin: 10px 10px 10px 120px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+h2 {
+	color: #45f3ff;
+	font-weight: 500;
+	text-align: center;
+	letter-spacing: 0.1em;
+}
 
-        .signup-button:hover {
-            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
-        }
+.inputBox {
+	position: relative;
+	width: 300px;
+	margin-top: 35px;
+}
 
-        .create-account {
-            font-size: 12px;
-            border: none;
-            cursor: pointer;
-            color: white;
-            background-color: rgb(46, 164, 79);
-        }
-        a{
-            text-decoration: none;
-        }
-    </style>
+.inputBox input {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	color: #23242a;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 20px 0px 10px;
+	pointer-events: none;
+	font-size: 1em;
+	color: #8f8f8f;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+	color: #45f3ff;
+	transform: translateX(0px) translateY(-34px);
+	font-size: 0.75em;
+}
+
+.inputBox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #45f3ff;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+
+.inputBox input:valid~i,
+.inputBox input:focus~i {
+	height: 44px;
+}
+
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.links a {
+	margin: 10px 0;
+	font-size: 0.75em;
+	color: #8f8f8f;
+	text-decoration: beige;
+}
+
+.links a:hover,
+.links a:nth-child(2) {
+	color: #45f3ff;
+}
+
+.button {
+	border: none;
+	outline: none;
+	padding: 11px 25px;
+	background: #45f3ff;
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: 600;
+	width: 100px;
+	margin-top: 10px;
+}
+
+.button:active {
+	opacity: 0.8;
+}
+	</style>
 </head>
 
 <body>
-    <section id="contact" class="contact">
-        <div class="login-container">
-            <h2>Login</h2>
-            <input type="text" id="username" placeholder="Enter Username">
-            <input type="password" id="password" placeholder="Enter Password">
-            <button onclick="login()">Login</button>
-        </div>
-        <button class="signup-button"><a class="create-account" href="signup.html">Create account</a></button>
-    </section>
+	<div class="box">
+		<span class="form">
+			<h2>Sign in</h2>
+			<div class="inputBox">
+				<input type="text" id="username" required="required">
+				<span>Userame</span>
+				<i></i>
+			</div>
+			<div class="inputBox">
+				<input type="password" id="password" required="required">
+				<span>Password</span>
+				<i></i>
+			</div>
+			<div class="links">
+				<a href="forgotpassword.html">Forgot Password ?</a>
+				<a href="signup.html">Signup</a>
+			</div>
+			<button class="button" onclick="login()">Login</button>
+		</span>
+	</div>
 </body>
 
 </html>
 <script>
-    // Hardcoded user data
-    const users = {
-        FA1001: { password: "1001", redirectUrl: "user1.html" },
-        FA1002: { password: "1002", redirectUrl: "user2.html" },
-        FA1003: { password: "1003", redirectUrl: "user3.html" },
-        FA1004: { password: "1004", redirectUrl: "user4.html" },
-        FA1005: { password: "1005", redirectUrl: "user5.html" },
-        FA1006: { password: "1006", redirectUrl: "user6.html" },
-        FA1007: { password: "1007", redirectUrl: "user7.html" },
-        FA1008: { password: "1008", redirectUrl: "user8.html" },
-    }
-    function login() {
-        // Get input values
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
+	// Hardcoded user data
+	const users = {
+		FA1001: { password: "1001", redirectUrl: "user1.html" },
+		FA1002: { password: "1002", redirectUrl: "user2.html" },
+		FA1003: { password: "1003", redirectUrl: "user3.html" },
+		FA1004: { password: "1004", redirectUrl: "user4.html" },
+		FA1005: { password: "1005", redirectUrl: "user5.html" },
+		FA1006: { password: "1006", redirectUrl: "user6.html" },
+		FA1007: { password: "1007", redirectUrl: "user7.html" },
+		FA1008: { password: "1008", redirectUrl: "user8.html" },
+	}
+	function login() {
+		// Get input values
+		const username = document.getElementById("username").value;
+		const password = document.getElementById("password").value;
 
-        // Validate credentials
-        if (users[username] && users[username].password === password) {
-            // Redirect to the respective profile page
-            window.location.href = users[username].redirectUrl;
-        } else {
-            alert("Invalid username or password");
-        }
-    }
-    // You can disable right-click on your website to prevent users from accessing the "Inspect" option easily:
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.addEventListener('keydown', (event) => {
-        if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.key === "U")) {
-            event.preventDefault();
-        }
-    });
+		// Validate credentials
+		if (users[username] && users[username].password === password) {
+			// Redirect to the respective profile page
+			window.location.href = users[username].redirectUrl;
+		} else {
+			alert("Invalid username or password");
+		}
+	}
+
 
 
 </script>
